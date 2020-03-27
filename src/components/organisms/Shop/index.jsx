@@ -47,7 +47,7 @@ class Shop extends React.Component{
     //console.log(products);
 
     return(
-      <MDBContainer id="shop">
+      <MDBContainer id="shop" fluid>
         <MDBRow className="flex-center">
           {products && products.map((product, i) => {
             return(

@@ -13,6 +13,7 @@ import {
   MDBCardFooter,
   MDBCardBody,
   MDBBtn,
+  MDBIcon,
 } from "mdbreact";
 
 //> CSS
@@ -41,16 +42,8 @@ class Product extends React.Component {
   };
 
   increase = () => {
-    if (this.state.value < 999) {
+    if (this.state.value < 10) {
       this.setState({ value: parseInt(this.state.value) + 1 });
-    }
-  };
-
-  handleChange = e => {
-    if (e.target.value >= 1 && e.target.value <= 999) {
-      this.setState({
-        value: parseInt(e.target.value)
-      });
     }
   };
 
@@ -58,7 +51,7 @@ class Product extends React.Component {
     const { product } = this.props;
 
     return (
-      <MDBCol key={this.props.id} md="4" className="product-item text-dark">
+      <MDBCol key={this.props.id} md="2" className="product-item text-dark mb-3">
         <MDBCard className={!product.node.variants.edges[0].node.availableForSale ? "outofstock" : ""}>
           <MDBCardBody>
             <MDBCardTitle className="text-center">
@@ -68,24 +61,20 @@ class Product extends React.Component {
               className="text-center"
               dangerouslySetInnerHTML={{ __html: product.node.descriptionHtml }}
             ></MDBCardText>
-            <div className="p-3">
+            <div className="px-3 py-4">
             {!product.node.variants.edges[0].node.availableForSale ? (
               <p className="text-muted text-center">Dieser Gutschein ist leider nicht mehr verfügbar.</p>
             ) : (
               <>
-              <p className="text-center mb-0">Anzahl</p>
-              <div className="def-number-input number-input mb-2 ml-auto mr-auto">
-                <button onClick={this.decrease} className="minus"></button>
-                <input
-                  className="quantity"
-                  name="quantity"
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                  type="number"
-                  min="1"
-                  max="10"
-                />
-                <button onClick={this.increase} className="plus"></button>
+              <p className="text-center my-0">Anzahl</p>
+              <div className="flex-center">
+                <MDBBtn color="orange" outline onClick={this.decrease} size="md">
+                  <MDBIcon icon="minus" className="m-0" />
+                </MDBBtn>
+                <span className="font-weight-bolder mx-2 text-muted">{this.state.value}</span>
+                <MDBBtn color="orange" onClick={this.increase} size="md">
+                  <MDBIcon icon="plus" className="m-0" />
+                </MDBBtn>
               </div>
               </>
             )}
