@@ -9,9 +9,6 @@ import { Route, Switch } from "react-router-dom";
  * HomePage: A basic template page
  */
 import {
-  HomePage,
-  MessagePage,
-  JoinPage,
   ShopPage,
 } from "./components/pages";
 

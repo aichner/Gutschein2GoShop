@@ -48,7 +48,8 @@ class ShopPage extends React.Component {
           <h2>
           Verifizierung ausstehend
           </h2>
-          <p className="lead mb-5">Die Echtheit dieses Partners ist noch nicht verifiziert.</p>
+          <p className="lead mb-5">Die Echtheit von <strong className="orange-text">
+          {match.params && match.params.username}</strong> ist noch nicht bestätigt.</p>
           <Link to="../">
             <MDBBtn color="orange" size="lg">
               Zurück zur Startseite
@@ -75,11 +76,17 @@ class ShopPage extends React.Component {
       );
     } else {
       return (
-        <MDBContainer className="text-center py-5 my-5">
-          <div className="spinner-grow text-warning" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </MDBContainer>
+        <>
+        {match.params.username ? (
+          <MDBContainer className="text-center py-5 my-5">
+            <div className="spinner-grow text-warning" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </MDBContainer>
+        ) : (
+          window.location.replace("https://gutschein2go.at")
+        )}
+        </>
       );
     }
   }
