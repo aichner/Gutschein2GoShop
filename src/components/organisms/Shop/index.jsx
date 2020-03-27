@@ -53,6 +53,12 @@ class Shop extends React.Component{
         Erwerben Sie einen Gutschein. <MDBIcon icon="heart" className="pink-text" /><br/>
         Einlösbar nach Ende der Corona-Krise direkt bei uns.
         </h3>
+        {products && products.length === 0 &&
+          <>
+            <p className="lead font-weight-bold mb-0">Derzeit sind keine Gutscheine vorhanden.</p>
+            <p>Besuchen Sie uns später noch einmal</p>
+          </>
+        }
         <MDBRow className="flex-center">
           {products && products.map((product, i) => {
             return(
