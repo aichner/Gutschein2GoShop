@@ -1,4 +1,5 @@
 #shop {
+  background: darken(#fff,3%);
   .card {
     z-index: 2;
     .card-body{
@@ -14,7 +15,7 @@
       margin-bottom: 0;
     }
     .card-footer {
-      background-color: darken(#fff,2%);
+      background-color: darken(#fff,4%);
     }
     /* out of stock */
     &.outofstock{
