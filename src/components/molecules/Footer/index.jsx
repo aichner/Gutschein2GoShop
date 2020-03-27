@@ -93,10 +93,10 @@ class Footer extends React.Component{
                   <small>
                     Stable release
                     <span className="pl-2 pr-2">·</span>
-                    Version v{process.env.REACT_APP_VERSION}
+                    Shop version v{process.env.REACT_APP_VERSION}
                     <span className="pl-2 pr-2">·</span>
                     <a 
-                    href="https://github.com/aichner/Gutschein2Go"
+                    href="https://github.com/aichner/Gutschein2GoShop"
                     rel="noopener noreferrer"
                     target="_blank"
                     >
@@ -105,7 +105,7 @@ class Footer extends React.Component{
                     </a>
                     <span className="pl-2 pr-2">·</span>
                     <a 
-                    href="https://github.com/aichner/Gutschein2Go/issues/new?template=bug_report.md"
+                    href="https://github.com/aichner/Gutschein2GoShop/issues/new?template=bug_report.md"
                     rel="noopener noreferrer"
                     target="_blank"
                     >

@@ -50,11 +50,11 @@ class ShopPage extends React.Component {
           </h2>
           <p className="lead mb-5">Die Echtheit von <strong className="orange-text">
           {match.params && match.params.username}</strong> ist noch nicht bestätigt.</p>
-          <Link to="../">
+          <a href="https://gutschein2go.at">
             <MDBBtn color="orange" size="lg">
               Zurück zur Startseite
             </MDBBtn>
-          </Link>
+          </a>
         </MDBContainer>
       );
     } else if(shopError === true) {
@@ -67,11 +67,11 @@ class ShopPage extends React.Component {
           <MDBIcon icon="warning" className="danger-text ml-2"/>
           </h2>
           <p className="lead mb-5">Haben Sie sich vertippt?</p>
-          <Link to="../join">
+          <a href="https://gutschein2go.at/join">
             <MDBBtn color="orange" size="lg">
               Partner werden
             </MDBBtn>
-          </Link>
+          </a>
         </MDBContainer>
       );
     } else {
