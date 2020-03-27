@@ -7,20 +7,33 @@ export const checkName = (name) => {
     firestore.collection('partners').get()
     .then((querySnapshot) => {
         let result = undefined;
+        let shop = undefined;
         let found = false;
+        let verified = false;
         querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
           result = doc.data();
           if(result){
             if(result.shop.name === name.toLowerCase()){
               found = true;
+              if(result.verified){
+                verified = true;
+                shop = result;
+              }
             }
           }
         });
         if(found){
-          dispatch({
-            type: 'SHOP_FOUND'
-          });
+          if(verified){
+            dispatch({
+              type: 'SHOP_FOUND_VERIFIED',
+              shop,
+            });
+          } else {
+            dispatch({
+              type: 'SHOP_FOUND'
+            });
+          }
         } else {
           dispatch({
             type: 'SHOP_NOTFOUND'

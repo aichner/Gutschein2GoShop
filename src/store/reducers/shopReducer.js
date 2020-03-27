@@ -1,6 +1,7 @@
 // Have initial state for when state is not ready to be passed
 const initState = {
-  shopError: null
+  shopError: null,
+  shop: null,
 };
 
 const shopReducer = (state = initState, action) => {
@@ -15,7 +16,14 @@ const shopReducer = (state = initState, action) => {
       console.log("Shop found");
       return {
         ...state,
-        shopError: false
+        shopError: undefined
+      };
+    case "SHOP_FOUND_VERIFIED":
+      console.log("Verified shop found", action);
+      return {
+        ...state,
+        shopError: false,
+        shop: action.shop
       };
     default:
       return state;

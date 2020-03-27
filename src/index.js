@@ -19,6 +19,13 @@ import "mdbreact/dist/css/mdb.css";
 // Root SCSS file
 import "./index.scss";
 
+//> Apollo
+import { ApolloClient } from "apollo-client";
+import { createHttpLink } from "apollo-link-http";
+import { setContext } from "apollo-link-context";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloProvider } from "react-apollo";
+
 //> Components
 // Root component
 import App from "./App";
@@ -44,6 +51,24 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 // Firebase config
 import fbInit from "./config/fbInit";
+
+// API Link
+const httpLink = createHttpLink({
+  uri: "https://gutschein2go.myshopify.com//api/graphql"
+});
+
+// Storefront access token
+const middlewareLink = setContext(() => ({
+  headers: {
+    "X-Shopify-Storefront-Access-Token": process.env.REACT_APP_STOREFRONT_TOKEN
+  }
+}));
+
+// Apollo Client
+const client = new ApolloClient({
+  link: middlewareLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
 
 /**
  * Create Redux data-store and store it in store
@@ -71,9 +96,11 @@ const store = createStore(
 store.firebaseAuthIsReady.then(() => {
   // Render the DOM
   ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ApolloProvider>,
     document.getElementById("root")
   );
   registerServiceWorker();

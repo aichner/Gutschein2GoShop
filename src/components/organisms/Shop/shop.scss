@@ -1,0 +1,34 @@
+#shop {
+  .card {
+    z-index: 2;
+    .card-body{
+      padding: 0;
+    }
+    /* in stock */
+    .card-title{
+      background-color: #ff8910;
+      padding: 1.5rem;
+      color: white;
+      font-weight: bolder;
+      font-size: 1.7rem;
+    }
+    .card-footer {
+      background-color: darken(#fff,2%);
+    }
+    /* out of stock */
+    &.outofstock{
+      .card-title{
+        background-color: lighten(#ff8910,20%);
+        padding: 1.5rem;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+/** 
+ * SPDX-License-Identifier: (EUPL-1.2)
+ * Copyright © 2019 Werbeagentur Christian Aichner
+ */
