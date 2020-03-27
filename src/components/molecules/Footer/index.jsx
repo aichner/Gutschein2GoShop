@@ -46,16 +46,16 @@ class Footer extends React.Component{
               <MDBContainer className="text-center text-md-left py-3">
                 <MDBRow className="flex-center">
                   <MDBCol md="3" className="text-center">
-                  <Link to="about">
+                  <a href="https://gutschein2go.at/about">
                     <li className="list-unstyled">
                       Impressum
                     </li>
-                  </Link>
-                  <Link to="privacy">
+                  </a>
+                  <a href="https://gutschein2go.at/privacy">
                     <li className="list-unstyled">
                       Datenschutzerklärung
                     </li>
-                  </Link>
+                  </a>
                   </MDBCol>
                   <MDBCol md="2" className="my-3">
                     <img src={logoImg} alt="Naturvertrieb Logo" className="img-fluid"/>

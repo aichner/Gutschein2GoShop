@@ -52,7 +52,7 @@ class Navbar extends React.Component{
       <div>
         <MDBNavbar color="white" light expand="md" fixed="top" scrolling>
         <MDBContainer>
-          <MDBNavbarBrand href="/" className="py-0 font-weight-bold mr-0">
+          <MDBNavbarBrand href="https://gutschein2go.at" className="py-0 font-weight-bold mr-0">
           <img src={logoImg} alt="Gutschien2Go Logo" className="img-fluid"/>
           </MDBNavbarBrand>
           {/*<MDBNavbarToggler
@@ -69,14 +69,10 @@ class Navbar extends React.Component{
                 <strong>Kontakt</strong>
               </a>
             </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink
-                exact
-                to="join"
-                onClick={this.closeCollapse("mainNavbarCollapse")}
-              >
+            <MDBNavItem className="ml-3">
+              <a href="https://gutschein2go.at/join">
                 <MDBBtn size="lg" color="orange">Join</MDBBtn>
-              </MDBNavLink>
+              </a>
             </MDBNavItem>
           </MDBNavbarNav>
           </MDBCollapse>
