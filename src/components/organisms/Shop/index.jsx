@@ -16,6 +16,7 @@ import {
 import {
     MDBRow,
     MDBCol,
+    MDBIcon,
     MDBContainer,
 } from 'mdbreact';
 
@@ -47,7 +48,11 @@ class Shop extends React.Component{
     //console.log(products);
 
     return(
-      <MDBContainer id="shop" fluid className="py-5">
+      <MDBContainer id="shop" fluid className="py-5 text-center">
+        <h3 className="mb-5">
+        Erwerben Sie einen Gutschein. <MDBIcon icon="heart" className="pink-text" /><br/>
+        Einlösbar nach Ende der Corona-Krise direkt bei uns.
+        </h3>
         <MDBRow className="flex-center">
           {products && products.map((product, i) => {
             return(

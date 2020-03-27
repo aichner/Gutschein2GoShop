@@ -1,5 +1,11 @@
-#shop {
-  
+#productshop {
+  .heading{
+    border-bottom: 5px #ff8910 solid;
+    display: inline-block;
+  }
+  img{
+    max-height: 150px;
+  }
 }
 
 /** 

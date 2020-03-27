@@ -215,10 +215,14 @@ class ShopPage extends React.Component {
     } else if(shopError === false) {
       // Shop found and valid
       return(
-        <>
+        <div id="productshop">
         <MDBContainer className="text-center mt-5 py-5">
-          <h2>Unterstützen Sie</h2>
-          <h2 className="h1 font-weight-bold">{shop.company.name}</h2>
+          {shop.shop.logo &&
+          <div className="my-4"><img src={shop.shop.logo} alt={shop.company.name+" Logo"} className="img-fluid" /></div>
+          }
+          <h2 className="h1 font-weight-bold mb-3 heading">{shop.company.name}</h2>
+          <h2 className="mb-0">Unterstützen Sie uns.</h2>
+          <p className="lead">Für eine gemeinsame Zukunft.</p>
         </MDBContainer>
         <Shop 
         products={this.props.data.shop.collectionByHandle.products.edges}
@@ -258,7 +262,7 @@ class ShopPage extends React.Component {
           handleCartClose={this.handleCartClose}
           customerAccessToken={this.state.customerAccessToken}
         />
-        </>
+        </div>
       );
     } else{
       return (
