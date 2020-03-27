@@ -57,7 +57,7 @@ class LineItem extends React.Component {
                 size="sm"
                 onClick={() => this.props.removeLineItemInCart(this.props.lineItem.id)}
                 >
-                <MDBIcon icon="times" />
+                <MDBIcon icon="times" className="m-0" />
                 </MDBBtn>
               </div>
             </div>
@@ -65,19 +65,21 @@ class LineItem extends React.Component {
               <div className="col-auto text-left">
                 <div>
                   <MDBBtn
-                  color="primary"
+                  color="orange"
                   size="sm"
+                  outline
+                  className="ml-0"
                   onClick={() => this.decrementQuantity(this.props.lineItem.id)}
                   >
-                  -
+                  <MDBIcon icon="minus" className="m-0" />
                   </MDBBtn>
                   <span className="ml-1 mr-1">{this.props.lineItem.quantity}</span>
                   <MDBBtn
-                  color="primary"
+                  color="orange"
                   size="sm"
                   onClick={() => this.incrementQuantity(this.props.lineItem.id)}
                   >
-                  +
+                  <MDBIcon icon="plus" className="m-0" />
                   </MDBBtn>
                 </div>
               </div>

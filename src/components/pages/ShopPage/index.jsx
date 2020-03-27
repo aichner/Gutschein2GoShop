@@ -16,6 +16,8 @@ import {
 //> Additional
 // Prop types
 import PropTypes from 'prop-types';
+// Copy
+import copy from "copy-to-clipboard";
 
 //> Apollo and GraphQL
 import { graphql } from 'react-apollo';
@@ -223,6 +225,31 @@ class ShopPage extends React.Component {
         addVariantToCart={this.addVariantToCart} 
         checkout={this.state.checkout}
         />
+        <MDBContainer className="text-center py-5 grey lighten-2" fluid>
+          <MDBBtn color="white" size="lg" onClick={this.handleCartOpen}>
+            <MDBIcon icon="shopping-basket" />
+            Mein Warenkorb
+          </MDBBtn>
+          {this.state.copied ? (
+            <MDBBtn color="success" size="lg" disabled>
+              <MDBIcon far icon="copy" />
+              Link kopiert
+            </MDBBtn>
+          ) : (
+            <MDBBtn 
+            color="elegant"
+            size="lg"
+            onClick={() => {
+              this.setState({
+                copied: true
+              }, () => copy("https://g2g.at"+this.props.location.pathname))
+            }}
+            >
+              <MDBIcon icon="copy" />
+              Share
+            </MDBBtn>
+          )}
+        </MDBContainer>
         <Cart
           removeLineItemInCart={this.removeLineItemInCart}
           updateLineItemInCart={this.updateLineItemInCart}

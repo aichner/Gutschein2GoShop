@@ -56,7 +56,7 @@ class Cart extends React.Component {
       toggle={this.props.handleCartClose}
       >
         <MDBModalHeader tag="p" toggle={this.props.handleCartClose}>
-          Was Sie genießen werden
+          Wie Sie helfen
         </MDBModalHeader>
         <MDBModalBody className="text-center">
           {lineItems}
@@ -77,17 +77,17 @@ class Cart extends React.Component {
               € {this.props.checkout.totalPrice}
             </MDBCol>
           </MDBRow>
+          <div>
+            <MDBBtn color="orange" outline onClick={this.props.handleCartClose}>
+            <MDBIcon icon="angle-left" className="pr-2"/>
+            Weitere kaufen
+            </MDBBtn>
+            <MDBBtn color="success" size="lg" onClick={this.openCheckout}>
+            <MDBIcon icon="check" className="pr-2" size="lg"/>
+            Checkout
+            </MDBBtn>
+          </div>
         </MDBModalBody>
-        <MDBModalFooter className="justify-content-center">
-          <MDBBtn color="primary" onClick={this.props.handleCartClose}>
-          <MDBIcon icon="angle-left" className="pr-2"/>
-          Weiter shoppen
-          </MDBBtn>
-          <MDBBtn color="green" onClick={this.openCheckout}>
-          <MDBIcon icon="check" className="pr-2"/>
-          Checkout
-          </MDBBtn>
-        </MDBModalFooter>
       </MDBModal>
     );
   }

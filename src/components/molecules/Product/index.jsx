@@ -51,7 +51,7 @@ class Product extends React.Component {
     const { product } = this.props;
 
     return (
-      <MDBCol key={this.props.id} md="2" className="product-item text-dark mb-3">
+      <MDBCol key={this.props.id} md="2" className="product-item text-dark mb-5">
         <MDBCard className={!product.node.variants.edges[0].node.availableForSale ? "outofstock" : ""}>
           <MDBCardBody>
             <MDBCardTitle className="text-center">
