@@ -13,20 +13,25 @@ import {
   Footer,
   Navbar,
 } from "./components/molecules";
+import {
+  ScrollToTop
+} from "./components/atoms";
 // Routes
 import Routes from "./Routes";
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <div className="flyout">
-          <Navbar />
-          <main>
-            <Routes />
-          </main>
-          <Footer />
-        </div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <ScrollToTop>
+          <div className="flyout">
+            <Navbar />
+            <main>
+              <Routes />
+            </main>
+            <Footer />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }

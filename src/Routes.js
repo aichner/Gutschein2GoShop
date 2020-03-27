@@ -9,20 +9,42 @@ import { Route, Switch } from "react-router-dom";
  * HomePage: A basic template page
  */
 import {
-  HomePage
+  HomePage,
+  MessagePage,
+  JoinPage,
+  ShopPage,
 } from "./components/pages";
 
 class Routes extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={HomePage} />
-          
-        <Route
-          render={function () {
-            return <h1>Not Found</h1>;
-          }}
+        <Route 
+        exact
+        path="/"
+        render={() => <HomePage />}
         />
+        <Route 
+        exact
+        path='/about'
+        render={(props) => <MessagePage {...props}/>}
+        />
+        <Route 
+        exact
+        path='/privacy'
+        render={(props) => <MessagePage {...props}/>}
+        />
+        <Route 
+        exact
+        path='/join'
+        render={(props) => <JoinPage {...props}/>}
+        />
+        <Route 
+        exact
+        path='/s/:username'
+        render={(props) => <ShopPage {...props}/>}
+        />
+        <Route component={HomePage} />
       </Switch>
     );
   }

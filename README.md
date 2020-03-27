@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://www.aichner-christian.com/" target="_blank" rel="noopener noreferrer">
-    <img src="https://www.aichner-christian.com/img/logo/logo_web.png" alt="Agency Logo" height="150">
+  <a href="https://www.gutschein2go.at?refer=github" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/aichner/Gutschein2Go/blob/master/src/assets/content/h50.png?raw=true" alt="Gutschein2Go Logo" height="50">
   </a>
 </p>
 
-<h3 align="center">Official React MDB Template</h3>
+<h3 align="center">Gutschein2Go</h3>
 
 <p align="center">
   This repository serves as an entry point for future React MDB Basic projects of the

@@ -13,6 +13,12 @@ package-lock.json
 # MDB
 mdbreact-*
 
+# Environment variables
+.env
+
+# Firebase configuration
+src/config/fbConfig.js
+
 # All editor configs but vscode
 .editorconfig
 .idea
