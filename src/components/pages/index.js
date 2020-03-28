@@ -1,9 +1,11 @@
 //> Components
 // Import all components to export them for easy access from parent components
 import ShopPage from "./ShopPage";
+import VerifyPage from "./VerifyPage";
 
 export {
-    ShopPage,
+  ShopPage,
+  VerifyPage,
 };
 
 /** 

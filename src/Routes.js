@@ -10,6 +10,7 @@ import { Route, Switch } from "react-router-dom";
  */
 import {
   ShopPage,
+  VerifyPage,
 } from "./components/pages";
 
 class Routes extends React.Component {
@@ -20,6 +21,11 @@ class Routes extends React.Component {
         exact
         path='/:username'
         render={(props) => <ShopPage {...props}/>}
+        />
+        <Route
+        exact
+        path='/verify/:token'
+        render={(props) => <VerifyPage {...props}/>}
         />
         <Route component={ShopPage} />
       </Switch>
