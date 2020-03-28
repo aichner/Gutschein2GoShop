@@ -52,8 +52,8 @@ class Navbar extends React.Component{
       <div>
         <MDBNavbar color="white" light expand="md" fixed="top" scrolling>
         <MDBContainer>
-          <MDBNavbarBrand href="https://gutschein2go.at" className="py-0 font-weight-bold mr-0">
-          <img src={logoImg} alt="Gutschien2Go Logo" className="img-fluid"/>
+          <MDBNavbarBrand className="py-0 font-weight-bold mr-0">
+          <a href="https://gutschein2go.at"><img src={logoImg} alt="Gutschien2Go Logo" className="img-fluid"/></a>
           </MDBNavbarBrand>
           {/*<MDBNavbarToggler
           onClick={this.toggleCollapse("mainNavbarCollapse")}
