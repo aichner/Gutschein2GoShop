@@ -2,6 +2,7 @@
 const initState = {
   shopError: null,
   shop: null,
+  local: null,
 };
 
 const shopReducer = (state = initState, action) => {
@@ -17,6 +18,12 @@ const shopReducer = (state = initState, action) => {
       return {
         ...state,
         shopError: undefined
+      };
+    case "LOCAL_FOUND":
+      console.log("Local found");
+      return {
+        ...state,
+        local: action.local
       };
     case "SHOP_FOUND_VERIFIED":
       console.log("Verified shop found", action);

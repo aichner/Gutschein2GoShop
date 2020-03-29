@@ -23,42 +23,38 @@ import { connect } from 'react-redux';
 // Actions
 import { signInAnonymous } from '../../../store/actions/authActions';
 import { checkName } from '../../../store/actions/shopActions';
+import { getLocal } from '../../../store/actions/shopActions';
 
 //> CSS
-import "./verifypage.scss";
+import "./localpage.scss";
 
 class VerifyPage extends React.Component {
-  render() {
-    let param = window.location.search.substr(1);
-    console.log(param);
+  componentDidMount = () => {
+    const { location } = this.props;
+    // Extract the city name from the path (/loc => loc)
+    const localName = location.pathname.substring(1);
 
-    if(param === "enter"){
-      return (
-        <MDBContainer id="message" className="py-5 my-5 text-center">
-          <MDBIcon icon="clock" className="orange-text mb-3" size="3x" />
-          <h2>
-          Gutschein überprüfen
-          </h2>
-          <input type="text" className="form-control"/>
-        </MDBContainer>
-      );
-    } else {
-      return(
-        <MDBContainer id="message" className="py-5 my-5 text-center">
-          <MDBIcon icon="clock" className="orange-text mb-3" size="3x" />
-          <h2>
-          Gutschein 
-          </h2>
-          <p className="lead mb-5">Die Echtheit von <strong className="orange-text">
-          Test</strong> ist noch nicht bestätigt.</p>
-          <a href="https://gutschein2go.at">
-            <MDBBtn color="orange" size="lg">
-              Zurück zur Startseite
-            </MDBBtn>
-          </a>
-        </MDBContainer>
-      );
-    }
+    // Retrieve information about local
+    this.props.getLocal(localName);
+  }
+
+  render() {
+    const { local } = this.props;
+    return (
+      <MDBContainer id="local" className="py-5 my-5 text-center">
+      {local ? (
+        <>
+        <MDBIcon icon="clock" className="orange-text mb-3" size="3x" />
+        <h2>
+        {local.name}
+        </h2>
+        <input type="text" className="form-control"/>
+        </>
+      ) : (
+        <h2>{local} not found</h2>
+      )}
+      </MDBContainer>
+    );
   }
 }
 
@@ -66,6 +62,7 @@ const mapStateToProps = (state) => {
   return {
     shopError: state.shop.shopError,
     shop: state.shop.shop,
+    local: state.shop.local,
     auth: state.firebase.auth
   }
 }
@@ -73,7 +70,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     signInAnonymous: () => dispatch(signInAnonymous()),
-    checkName: (name) => dispatch(checkName(name))
+    getLocal: (name) => dispatch(getLocal(name))
   }
 }
 

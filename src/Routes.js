@@ -10,6 +10,7 @@ import { Route, Switch } from "react-router-dom";
  */
 import {
   ShopPage,
+  LocalPage,
   VerifyPage,
 } from "./components/pages";
 
@@ -19,13 +20,23 @@ class Routes extends React.Component {
       <Switch>
         <Route
         exact
-        path='/:username'
-        render={(props) => <ShopPage {...props}/>}
+        path='/verify'
+        render={(props) => <VerifyPage {...props}/>}
         />
         <Route
         exact
-        path='/verify/:token'
-        render={(props) => <VerifyPage {...props}/>}
+        path='/villach'
+        render={(props) => <LocalPage {...props}/>}
+        />
+        <Route
+        exact
+        path='/villach2'
+        render={(props) => <LocalPage {...props}/>}
+        />
+        <Route
+        exact
+        path='/:username'
+        render={(props) => <ShopPage {...props}/>}
         />
         <Route component={ShopPage} />
       </Switch>

@@ -43,6 +43,28 @@ export const checkName = (name) => {
   };
 };
 
+export const getLocal = (name) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
+    const firestore = getFirestore();
+
+    firestore.collection('local').where("name", "==", name.toLowerCase()).get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        dispatch({
+          type: 'LOCAL_FOUND',
+          local: doc.data(),
+        });
+      });
+    })
+    .catch(function(error) {
+      console.log("Error getting documents: ", error);
+    });
+  };
+};
+
+
 /**
  * SPDX-License-Identifier: (EUPL-1.2)
  * Copyright © 2019 Christian Aichner
