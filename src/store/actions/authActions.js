@@ -22,7 +22,6 @@ export const signIn = credentials => {
 export const signInAnonymous = credentials => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-
     firebase.auth().signInAnonymously()
     .then(() => {
       dispatch({
@@ -31,7 +30,7 @@ export const signInAnonymous = credentials => {
     })
     .catch(err => {
       dispatch({
-        type: "LOGIN_ERROR",
+        type: "LOGIN_ANON_ERROR",
         err
       });
     });

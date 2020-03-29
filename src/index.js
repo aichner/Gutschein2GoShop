@@ -86,7 +86,7 @@ const store = createStore(
     reduxFirestore(fbInit),
     reactReduxFirebase(fbInit, {
       useFirestoreForProfile: true, // Sync user data to user profile
-      userProfile: "users", // Tell Redux Firebase where our users are stored
+      userProfile: "partners", // Tell Redux Firebase where our users are stored
       attachAuthIsReady: true // Enable firebase initializing before DOM rendering
     })
   )
