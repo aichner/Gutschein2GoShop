@@ -184,10 +184,11 @@ class ShopPage extends React.Component {
         <MDBContainer id="message" className="py-5 my-5 text-center">
           <MDBIcon icon="clock" className="orange-text mb-3" size="3x" />
           <h2>
-          Verifizierung ausstehend
+          Noch nicht geöffnet
           </h2>
-          <p className="lead mb-5">Die Echtheit von <strong className="orange-text">
-          {match.params && match.params.username}</strong> ist noch nicht bestätigt.</p>
+          <p className="lead mb-0">Der Gutschein-Shop von <strong className="orange-text">
+          {match.params && match.params.username}</strong> ist noch nicht geöffnet.</p>
+          <p className="mb-5">Kommen Sie später wieder <MDBIcon icon="heart" className="pink-text"/></p>
           <a href="https://gutschein2go.at">
             <MDBBtn color="orange" size="lg">
               Zurück zur Startseite

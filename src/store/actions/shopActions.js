@@ -16,7 +16,7 @@ export const checkName = (name) => {
           if(result){
             if(result.shop.name === name.toLowerCase()){
               found = true;
-              if(result.verified){
+              if(result.shop.active){
                 verified = true;
                 shop = result;
               }
