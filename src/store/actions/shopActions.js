@@ -14,11 +14,13 @@ export const checkName = (name) => {
           // doc.data() is never undefined for query doc snapshots
           result = doc.data();
           if(result){
-            if(result.shop.name === name.toLowerCase()){
-              found = true;
-              if(result.shop.active){
-                verified = true;
-                shop = result;
+            if(!result.admin){
+              if(result.shop.name === name.toLowerCase()){
+                found = true;
+                if(result.shop.active){
+                  verified = true;
+                  shop = result;
+                }
               }
             }
           }

@@ -176,7 +176,7 @@ class ShopPage extends React.Component {
       );
     }
     if (this.props.data.error) {
-      return <p>{this.props.data.error.message}</p>;
+      window.location.replace("https://gutschein2go.at")
     }
 
     if(shopError === undefined){
@@ -266,6 +266,7 @@ class ShopPage extends React.Component {
         </div>
       );
     } else{
+      console.log(match.params.username);
       return (
         <>
         {match.params.username ? (
