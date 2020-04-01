@@ -25,16 +25,6 @@ class Routes extends React.Component {
         />
         <Route
         exact
-        path='/villach'
-        render={(props) => <LocalPage {...props}/>}
-        />
-        <Route
-        exact
-        path='/villach2'
-        render={(props) => <LocalPage {...props}/>}
-        />
-        <Route
-        exact
         path='/:username'
         render={(props) => <ShopPage {...props}/>}
         />
