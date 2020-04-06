@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.gutschein2go.at?refer=github" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/aichner/Gutschein2Go/blob/master/src/assets/content/h50.png?raw=true" alt="Gutschein2Go Logo" height="50">
+    <img src="https://github.com/aichner/Gutschein2Go/blob/master/src/assets/content/h60.png?raw=true" alt="Gutschein2Go Logo" height="60">
   </a>
 </p>
 
