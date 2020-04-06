@@ -51,7 +51,7 @@ class Shop extends React.Component{
       <MDBContainer id="shop" fluid className="py-5 text-center">
         <h3 className="mb-5">
         Erwerben Sie einen Gutschein. <MDBIcon icon="heart" className="pink-text" /><br/>
-        Einlösbar nach Ende der Corona-Krise direkt bei uns.
+        Einlösbar nach Ende der Corona-Krise direkt bei {this.props.companyName}.
         </h3>
         {products && products.length === 0 &&
           <>

@@ -4,6 +4,10 @@
     position: relative;
     width: 100%;
   }
+  .form-check-input[type="checkbox"].filled-in:checked+label:after, label.btn input[type="checkbox"].filled-in:checked+label:after{
+    background-color: #00c851;
+    border: 2px solid #00c851;
+  }
 }
 
 /** 

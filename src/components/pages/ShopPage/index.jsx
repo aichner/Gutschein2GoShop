@@ -229,6 +229,7 @@ class ShopPage extends React.Component {
         products={this.props.data.shop.collectionByHandle.products.edges}
         addVariantToCart={this.addVariantToCart} 
         checkout={this.state.checkout}
+        companyName={shop.company.name}
         />
         <MDBContainer className="text-center py-5 grey lighten-2" fluid>
           <MDBBtn color="white" size="lg" onClick={this.handleCartOpen}>
