@@ -21,7 +21,7 @@ import {
 import "./navbar.scss";
 
 // React Logo
-import logoImg from "../../../assets/content/h50.png";
+import logoImg from "../../../assets/content/h60.png";
 
 class Navbar extends React.Component{
   state = {

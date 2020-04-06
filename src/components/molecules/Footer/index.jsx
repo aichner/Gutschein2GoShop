@@ -18,7 +18,7 @@ import {
 import "./footer.scss";
 
 //> Images
-import logoImg from "../../../assets/content/h40_white.png";
+import logoImg from "../../../assets/content/h50_white.png";
 
 class Footer extends React.Component{
   state = {
