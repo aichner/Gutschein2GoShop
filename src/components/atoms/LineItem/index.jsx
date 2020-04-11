@@ -32,24 +32,12 @@ class LineItem extends React.Component {
     return (
       <li className="line-item mt-2 pb-2">
         <div className="row">
-          <div className="col-auto">
-            {this.props.lineItem.variant.image && 
-            <img 
-            src={this.props.lineItem.variant.image.src}
-            className="img-fluid"
-            alt={`${this.props.lineItem.title} product shot`}
-            />
-            }
-          </div>
           <div className="col">
             <div className="row flex-center">
               <div className="col-auto text-left">
                 <p className="font-weight-bold mb-0">
                 {this.props.lineItem.title}
                 </p>
-                <small>
-                {this.props.lineItem.variant.title}
-                </small>
               </div>
               <div className="col text-right">
                 <MDBBtn 

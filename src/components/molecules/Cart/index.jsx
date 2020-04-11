@@ -104,8 +104,8 @@ class Cart extends React.Component {
               label={
                 <p>
                   Ich habe die{" "}
-                  <a href="https://gutschein2go.at/agb" target="_blank">
-                    AGB
+                  <a href="https://gutschein2go.at/anb" target="_blank">
+                    ANB
                   </a>{" "}
                   gelesen und akzeptiert.
                 </p>
@@ -119,8 +119,15 @@ class Cart extends React.Component {
                   agb: e.target.checked,
                 });
               }}
-              containerClass="mt-4 mb-2"
+              containerClass="mt-4 mb-1"
             />
+            <small className="d-block text-muted mb-2">
+              Ich akzeptiere die{" "}
+              <a href="https://gutschein2go.at/privacy" target="_blank">
+                Datenschutzerklärung
+              </a>
+              .
+            </small>
             <MDBBtn
               color="success"
               size="lg"
@@ -128,7 +135,7 @@ class Cart extends React.Component {
               disabled={lineItems.length < 1 || !this.state.agb}
             >
               <MDBIcon icon="check" className="pr-2" size="lg" />
-              Checkout
+              Weiter
             </MDBBtn>
           </div>
         </MDBModalBody>

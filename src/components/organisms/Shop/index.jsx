@@ -43,9 +43,9 @@ class Shop extends React.Component{
 
   render(){
     const { products } = this.state;
-
+    
     // Debugging
-    //console.log(products);
+    console.log(products);
 
     return(
       <MDBContainer id="shop" fluid className="py-5 text-center">
@@ -68,6 +68,7 @@ class Shop extends React.Component{
               product={product}
               addVariantToCart={this.props.addVariantToCart}
               checkout={this.state.checkout}
+              companyName={this.props.companyName}
               />
             );
           })}
