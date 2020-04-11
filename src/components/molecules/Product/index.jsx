@@ -101,22 +101,33 @@ class Product extends React.Component {
                 Dieser Gutschein kann ausschließlich bei {companyName} eingelöst
                 werden.{" "}
                 {product.node.tags.includes("wert") && (
-                  <span>
-                    Dieser Gutschein ist ein Wertgutschein und berechtigt den
-                    Gutscheinkäufer zum Erwerb von Waren und zur Inanspruchnahme
-                    von Dienstleistungen bzw der Herstellung von Werken des
-                    Verkäufers im Rahmen der vom Verkäufer in seinem
-                    Geschäftsbetrieb angebotenen Leistungen.
-                  </span>
+                  <>
+                    <span>
+                      Dieser Gutschein ist ein Wertgutschein und berechtigt den
+                      Gutscheinkäufer zum Erwerb von Waren und zur
+                      Inanspruchnahme von Dienstleistungen bzw der Herstellung
+                      von Werken des Verkäufers im Rahmen der vom Verkäufer in
+                      seinem Geschäftsbetrieb angebotenen Leistungen.
+                    </span>
+                    {product.node.description && (
+                      <span className="font-weight-bold mt-2 d-block">
+                        {product.node.description}
+                      </span>
+                    )}
+                  </>
                 )}
                 {product.node.tags.includes("leistung") && (
                   <>
-                  <span>
-                    Dieser Gutschein ist ein Leistungsgutschein und berechtigt
-                    den Gutscheinkäufer zur Inanspruchnahme der bezeichneten
-                    Leistung.
-                  </span>
-                  <span className="font-weight-bold mt-2 d-block">{product.node.description}</span>
+                    <span>
+                      Dieser Gutschein ist ein Leistungsgutschein und berechtigt
+                      den Gutscheinkäufer zur Inanspruchnahme der bezeichneten
+                      Leistung.
+                    </span>
+                    {product.node.description && (
+                      <span className="font-weight-bold mt-2 d-block">
+                        {product.node.description}
+                      </span>
+                    )}
                   </>
                 )}
               </small>
