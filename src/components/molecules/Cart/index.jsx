@@ -100,27 +100,34 @@ class Cart extends React.Component {
           </MDBRow>
           <div>
             <hr />
-            <MDBInput
-              label={
-                <p>
-                  Ich habe die{" "}
-                  <a href="https://gutschein2go.at/anb" target="_blank">
-                    ANB
-                  </a>{" "}
-                  gelesen und akzeptiert.
-                </p>
-              }
-              filled
-              type="checkbox"
-              id="checkbox2"
-              checked={this.state.agb}
-              onChange={(e) => {
-                this.setState({
-                  agb: e.target.checked,
-                });
-              }}
-              containerClass="mt-4 mb-1"
-            />
+            <div className="text-left">
+              <MDBInput
+                label={
+                  <small>
+                    Ich bestätige die{" "}
+                    <a href="https://gutschein2go.at/anb" target="_blank">
+                      ANB
+                    </a>{" "}
+                    gelesen zu haben und nehme zur Kenntnis das gutschein2go
+                    lediglich den Marktplatz zur Verfügung stellt und die
+                    angebotenen Gutscheine ausschließlich beim jeweiligen
+                    Verkäufer eingelöst werden können. gutschein2go haftet nicht
+                    dafür, dass der Verkäufer die Leistungen zu den vereinbarten
+                    Bedingungen erbringt.
+                  </small>
+                }
+                filled
+                type="checkbox"
+                id="checkbox2"
+                checked={this.state.agb}
+                onChange={(e) => {
+                  this.setState({
+                    agb: e.target.checked,
+                  });
+                }}
+                containerClass="mt-4 mb-1"
+              />
+            </div>
             <small className="d-block text-muted mb-2">
               Ich akzeptiere die{" "}
               <a href="https://gutschein2go.at/privacy" target="_blank">
